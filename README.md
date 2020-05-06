@@ -1,7 +1,7 @@
 # pickUp-Colors-Images
 This project uses css and a small plugin to "get" the main colors of an image
 
-##First Version
+## First Version
 
   in this first version, images can only be added via code.
   

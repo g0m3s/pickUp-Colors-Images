@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <img src="i1.jpg" alt="imagem" id="img" height="500" style="box-shadow: 0px 0px 7px white;">
+    <h2>As principais cores da sua foto sao: </h2>
+
+    <div class="cor">
+
+        <div class="cores" id="cor1" ><p id="codCor1"></p></div>
+        <div class="cores" id="cor2" ><p id="codCor2"></p></div>
+        <div class="cores" id="cor3" ><p id="codCor3"></p></div>
+        <div class="cores" id="cor4" ><p id="codCor4"></p></div>
+        
+    </div>
+    
+    <div class="animation">
+
+        <div id="c1"></div>
+        <div id="c2"></div>
+        <div id="c3"></div>
+        <div id="c4"></div>
+
+    </div>
+
+
+    <script src="../color-thief.min.js"></script>
+    <script>
+        
+        const colorThief = new ColorThief
+        var palette
+
+        var img = document.querySelector('#img')
+
+        img.addEventListener('load', function() {
+
+            palette = colorThief.getPalette(img,4)
+                
+            document.querySelector('#cor1').style.backgroundColor = `rgb(${palette[0]})`
+            document.querySelector('#cor2').style.backgroundColor = `rgb(${palette[1]})`
+            document.querySelector('#cor3').style.backgroundColor = `rgb(${palette[2]})`
+            document.querySelector('#cor4').style.backgroundColor = `rgb(${palette[3]})`
+
+            document.querySelector('#c1').style.backgroundColor = `rgb(${palette[0]})`
+            document.querySelector('#c2').style.backgroundColor = `rgb(${palette[1]})`
+            document.querySelector('#c3').style.backgroundColor = `rgb(${palette[2]})`
+            document.querySelector('#c4').style.backgroundColor = `rgb(${palette[3]})`
+
+            document.querySelector('#codCor1').innerHTML = `RGB( ${palette[0]} )`
+            document.querySelector('#codCor2').innerHTML = `RGB( ${palette[1]} )`
+            document.querySelector('#codCor3').innerHTML = `RGB( ${palette[2]} )`
+            document.querySelector('#codCor4').innerHTML = `RGB( ${palette[3]} )`
+
+        });
+
+        
+
+    </script>
+    
+</body>
+</html>
